@@ -19,7 +19,7 @@ export default function App() {
     
   );
 }
- function MainScreen({navigation, route}: any){
+ function MainScreen({navigation}: any){
   /*This is meant to create the components where thie information will stored for the purposes fo navigation or populating an array */
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -27,7 +27,9 @@ export default function App() {
   const [favSong, setFavSong] = useState("");
 
   return(
+
   <SafeAreaView>
+
     <View style={styles.container}  >
       <Text style={styles.Title}>Welcome to my revision </Text>
       <Text style={styles.lables}>What is your name?</Text>
@@ -49,14 +51,16 @@ export default function App() {
         ) 
 
              
+
       }}
       />
-    </View>
+    </View> 
+   
     </SafeAreaView>
-
+   
   );
  }
- function ViewDetails({ route }: any){
+ function ViewDetails({ navigation,route }: any){
   const { NameSend: NameGet, SurnameSend: SurnameGet, BandSend: BandGet, SongSend: SongGet } = route?.params || {};
   return(
     <View>
